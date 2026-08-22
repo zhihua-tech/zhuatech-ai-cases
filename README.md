@@ -2,7 +2,7 @@
 
 > 把抽象的模型能力转化为可体验、可测试、可扩展的企业业务案例。
 
-[知华科技官网](https://www.zhuatech.cn/) · [架构设计](docs/architecture.md) · [API 摘要](docs/api.md) · [部署说明](deploy/README.md)
+[知华科技官网](https://www.zhuatech.cn/) · [33 个独立项目矩阵](docs/independent-project-matrix.md) · [架构设计](docs/architecture.md) · [API 摘要](docs/api.md) · [部署说明](deploy/README.md)
 
 ZhuaTech AI Cases 是上海如静知华信息科技有限公司推出的企业 AI 场景案例平台社区源码版。项目包含案例门户、案例体验工作台、运营管理端、Java 业务规则运行时、MySQL 调用记录，以及可选的 DeepSeek/OpenAI 兼容模型适配层。
 
