@@ -1,0 +1,17 @@
+# Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/
+spring:
+  datasource:
+    url: jdbc:h2:mem:aicases;MODE=MySQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+zhuatech:
+  ai:
+    provider: local
+    base-url: https://api.deepseek.com
+    model: deepseek-chat
+    api-key:

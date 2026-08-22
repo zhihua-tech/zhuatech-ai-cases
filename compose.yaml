@@ -1,0 +1,36 @@
+# Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-zhuatech_ai_cases}
+      MYSQL_USER: ${MYSQL_USER:-zhuatech}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change-me}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change-root-password}
+    ports: ["3306:3306"]
+    volumes: ["mysql-data:/var/lib/mysql"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-zhuatech_ai_cases}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+      DB_USERNAME: ${MYSQL_USER:-zhuatech}
+      DB_PASSWORD: ${MYSQL_PASSWORD:-change-me}
+      ZHUATECH_AI_PROVIDER: ${ZHUATECH_AI_PROVIDER:-local}
+      ZHUATECH_AI_BASE_URL: ${ZHUATECH_AI_BASE_URL:-https://api.deepseek.com}
+      ZHUATECH_AI_MODEL: ${ZHUATECH_AI_MODEL:-deepseek-chat}
+      ZHUATECH_AI_API_KEY: ${ZHUATECH_AI_API_KEY:-}
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports: ["8080:8080"]
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["8088:80"]
+volumes:
+  mysql-data:

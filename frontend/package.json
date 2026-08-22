@@ -1,0 +1,25 @@
+{
+  "name": "zhuatech-ai-cases-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "知华科技企业AI应用案例中心社区源码版前端",
+  "author": "上海如静知华信息科技有限公司",
+  "homepage": "https://www.zhuatech.cn/",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "dev": "vite",
+    "dev:demo": "vite --mode demo",
+    "build": "vite build",
+    "build:demo": "vite build --mode demo",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.0.6"
+  }
+}
