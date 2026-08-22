@@ -2,14 +2,16 @@
 
 每个案例对应一个可独立运行、独立测试、独立发布的代码仓库。`zhuatech-ai-cases` 只承担统一导航与案例索引，不代替下列独立项目。
 
+当前进度：首批多模态 6 个独立项目已完成本地开发、测试、界面截图与 Git 提交；其余项目按下表继续实施。完成不代表已推送远程仓库。
+
 | 序号 | 案例方向 | 独立项目 | 实施方式 |
 | --- | --- | --- | --- |
-| 01 | 音色克隆 | `zhuatech-voiceclone` | 新建，提供授权校验、音频质检与服务适配接口 |
-| 02 | 文生视频 | `zhuatech-videogen` | 新建，提供脚本、分镜与渲染任务编排 |
-| 03 | 数字人播报 | `zhuatech-digitalhuman` | 新建，提供口播分段、形象与合规编排 |
-| 04 | 以图搜图 | `zhuatech-imagesearch` | 新建，提供向量检索流程与可解释排序 |
-| 05 | 文生图 | `zhuatech-imagegen` | 新建，提供提示词工程、品牌约束与生成适配接口 |
-| 06 | 图像人员检测 | `zhuatech-peopledetect` | 新建，提供区域计数、容量与告警规则 |
+| 01 | 音色克隆 | `zhuatech-voiceclone` | ✅ 已完成：授权校验、音频质检与服务适配接口 |
+| 02 | 文生视频 | `zhuatech-videogen` | ✅ 已完成：脚本、分镜与渲染任务编排 |
+| 03 | 数字人播报 | `zhuatech-digitalhuman` | ✅ 已完成：口播分段、形象/音色授权与合规编排 |
+| 04 | 以图搜图 | `zhuatech-imagesearch` | ✅ 已完成：视觉检索流程、授权过滤与可解释排序 |
+| 05 | 文生图 | `zhuatech-imagegen` | ✅ 已完成：提示词变体、品牌约束与生成适配接口 |
+| 06 | 图像人员检测 | `zhuatech-peopledetect` | ✅ 已完成：匿名区域计数、容量与告警规则 |
 | 07 | 合同风险识别 | `zhuatech-contractai` | 升级现有独立项目 |
 | 08 | 智能语音笔记 | `zhuatech-voicenote` | 新建 |
 | 09 | 销售单智能助手 | `zhuatech-salesorderai` | 新建 |
