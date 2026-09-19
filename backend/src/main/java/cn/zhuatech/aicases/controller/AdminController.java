@@ -9,21 +9,39 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
     private final AdminDashboardService dashboardService;
     private final AiCaseQueryService queryService;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public AdminController(AdminDashboardService dashboardService, AiCaseQueryService queryService) {
         this.dashboardService = dashboardService;
         this.queryService = queryService;
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @GetMapping("/overview") public ApiResponse<AdminDashboardService.Overview> overview() { return ApiResponse.ok(dashboardService.overview()); }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @GetMapping("/cases") public ApiResponse<List<AiCaseDto>> cases() { return ApiResponse.ok(queryService.list(true)); }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @GetMapping("/executions") public ApiResponse<List<AdminDashboardService.ExecutionView>> executions(@RequestParam(defaultValue = "20") int limit) {
         return ApiResponse.ok(dashboardService.executions(limit));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PatchMapping("/cases/{id}") public ApiResponse<AiCaseDto> update(@PathVariable Long id, @RequestBody Map<String, Boolean> values) {
         return ApiResponse.ok(dashboardService.updateCase(id, values));
     }

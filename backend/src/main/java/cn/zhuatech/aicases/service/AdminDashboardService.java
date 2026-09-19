@@ -15,12 +15,18 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class AdminDashboardService {
     private final AiCaseDefinitionRepository caseRepository;
     private final AiCaseExecutionRepository executionRepository;
     private final OpenAiCompatibleGateway gateway;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public AdminDashboardService(AiCaseDefinitionRepository caseRepository,
                                  AiCaseExecutionRepository executionRepository,
                                  OpenAiCompatibleGateway gateway) {
@@ -29,6 +35,9 @@ public class AdminDashboardService {
         this.gateway = gateway;
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Overview overview() {
         long enabled = caseRepository.findAll().stream().filter(item -> item.isEnabled()).count();
         return new Overview(caseRepository.count(), enabled, executionRepository.count(),
@@ -36,11 +45,17 @@ public class AdminDashboardService {
             executionRepository.countBySuccessFalse(), gateway.status());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<ExecutionView> executions(int limit) {
         return executionRepository.findAllByOrderByCreatedAtDesc(PageRequest.of(0, Math.min(Math.max(limit, 1), 100)))
             .stream().map(ExecutionView::from).toList();
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional
     public AiCaseDto updateCase(Long id, Map<String, Boolean> values) {
         var entity = caseRepository.findById(id).orElseThrow(() -> new BusinessException("案例不存在"));
@@ -49,10 +64,19 @@ public class AdminDashboardService {
         return AiCaseDto.from(caseRepository.save(entity));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Overview(long caseCount, long enabledCount, long executionCount, long last24Hours,
                            long failedCount, OpenAiCompatibleGateway.ProviderStatus provider) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ExecutionView(Long id, String caseSlug, String requestSummary, String resultSummary,
                                 String executionMode, long durationMs, boolean success, Instant createdAt) {
+        /**
+         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+         */
         static ExecutionView from(AiCaseExecution entity) {
             return new ExecutionView(entity.getId(), entity.getCaseSlug(), entity.getRequestSummary(),
                 entity.getResultSummary(), entity.getExecutionMode(), entity.getDurationMs(), entity.isSuccess(), entity.getCreatedAt());

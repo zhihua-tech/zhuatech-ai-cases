@@ -4,6 +4,9 @@ package cn.zhuatech.aicases.model;
 import jakarta.persistence.*;
 import java.time.Instant;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Entity
 @Table(name = "ai_case_execution")
 public class AiCaseExecution {
@@ -24,8 +27,14 @@ public class AiCaseExecution {
     @Column(name = "created_at", nullable = false)
     private Instant createdAt;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     protected AiCaseExecution() {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public AiCaseExecution(String caseSlug, String requestSummary, String resultSummary,
                            String executionMode, long durationMs, boolean success) {
         this.caseSlug = caseSlug;
@@ -36,13 +45,40 @@ public class AiCaseExecution {
         this.success = success;
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PrePersist void onCreate() { createdAt = Instant.now(); }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Long getId() { return id; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String getCaseSlug() { return caseSlug; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String getRequestSummary() { return requestSummary; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String getResultSummary() { return resultSummary; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String getExecutionMode() { return executionMode; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public long getDurationMs() { return durationMs; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public boolean isSuccess() { return success; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Instant getCreatedAt() { return createdAt; }
 }

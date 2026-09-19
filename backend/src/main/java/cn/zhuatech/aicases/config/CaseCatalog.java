@@ -5,7 +5,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 public final class CaseCatalog {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private CaseCatalog() {}
 
     private static final Map<String, CaseSpec> CASES = new LinkedHashMap<>();
@@ -33,20 +39,44 @@ public final class CaseCatalog {
             List.of(text("equipment", "设备名称", "CNC-07 数控机床", true), number("temperature", "当前温度(℃)", "86", true), number("vibration", "振动值(mm/s)", "9.2", true), textarea("alarms", "告警信息", "主轴温升过快；加工精度漂移", false))));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private static FieldSpec text(String key, String label, String placeholder, boolean required) {
         return new FieldSpec(key, label, "text", placeholder, required);
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private static FieldSpec textarea(String key, String label, String placeholder, boolean required) {
         return new FieldSpec(key, label, "textarea", placeholder, required);
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private static FieldSpec number(String key, String label, String placeholder, boolean required) {
         return new FieldSpec(key, label, "number", placeholder, required);
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private static void register(CaseSpec spec) { CASES.put(spec.slug(), spec); }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public static List<CaseSpec> all() { return List.copyOf(CASES.values()); }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public static CaseSpec get(String slug) { return CASES.get(slug); }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record CaseSpec(String slug, String name, String category, String summary, String icon,
                            String accent, boolean featured, List<FieldSpec> fields) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record FieldSpec(String key, String label, String type, String placeholder, boolean required) {}
 }

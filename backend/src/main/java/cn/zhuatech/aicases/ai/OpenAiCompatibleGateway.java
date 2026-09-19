@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Component
 public class OpenAiCompatibleGateway {
     private final String provider;
@@ -20,6 +23,9 @@ public class OpenAiCompatibleGateway {
     private final String apiKey;
     private final RestClient restClient;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public OpenAiCompatibleGateway(
         @Value("${zhuatech.ai.provider:local}") String provider,
         @Value("${zhuatech.ai.base-url:https://api.deepseek.com}") String baseUrl,
@@ -35,6 +41,9 @@ public class OpenAiCompatibleGateway {
         this.restClient = RestClient.builder().requestFactory(factory).build();
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Optional<String> complete(String systemPrompt, String businessContext) {
         if ("local".equalsIgnoreCase(provider) || apiKey == null || apiKey.isBlank()) return Optional.empty();
         String context = businessContext.length() > 6000 ? businessContext.substring(0, 6000) : businessContext;
@@ -61,10 +70,16 @@ public class OpenAiCompatibleGateway {
         }
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ProviderStatus status() {
         boolean configured = !"local".equalsIgnoreCase(provider) && apiKey != null && !apiKey.isBlank();
         return new ProviderStatus(provider, model, baseUrl, configured, configured ? "模型增强已启用" : "本地规则模式");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ProviderStatus(String provider, String model, String baseUrl, boolean configured, String label) {}
 }

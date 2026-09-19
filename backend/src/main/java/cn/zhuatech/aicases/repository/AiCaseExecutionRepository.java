@@ -7,8 +7,20 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.time.Instant;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 public interface AiCaseExecutionRepository extends JpaRepository<AiCaseExecution, Long> {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     List<AiCaseExecution> findAllByOrderByCreatedAtDesc(Pageable pageable);
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     long countByCreatedAtAfter(Instant after);
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     long countBySuccessFalse();
 }

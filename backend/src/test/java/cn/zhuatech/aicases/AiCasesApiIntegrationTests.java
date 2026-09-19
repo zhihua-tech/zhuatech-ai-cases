@@ -10,11 +10,17 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 class AiCasesApiIntegrationTests {
     @Autowired MockMvc mvc;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void listsTenCases() throws Exception {
         mvc.perform(get("/api/cases"))
             .andExpect(status().isOk())
@@ -22,6 +28,9 @@ class AiCasesApiIntegrationTests {
             .andExpect(jsonPath("$.data.length()").value(10));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void runsInvoiceInsight() throws Exception {
         mvc.perform(post("/api/cases/invoice-insight/run")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -31,6 +40,9 @@ class AiCasesApiIntegrationTests {
             .andExpect(jsonPath("$.data.structuredData.amountRatio").exists());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void exposesAdminOverview() throws Exception {
         mvc.perform(get("/api/admin/overview"))
             .andExpect(status().isOk())

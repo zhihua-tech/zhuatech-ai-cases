@@ -10,11 +10,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @SpringBootTest
 @Transactional
 class CaseExecutionServiceTests {
     @Autowired CaseExecutionService service;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void contractReviewFindsRiskEvidence() {
         var result = service.run("contract-review", new RunCaseRequest(Map.of(
             "contractText", "付款周期90日，甲方拥有单方解除权，合同到期自动续约。",
@@ -24,6 +30,9 @@ class CaseExecutionServiceTests {
         assertThat(result.executionMode()).isEqualTo("LOCAL_RULES");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void allTenCasesHaveRunnableLocalRules() {
         Map<String, Map<String, Object>> samples = Map.of(
             "meeting-minutes", Map.of("transcript", "会议决定周五上线，张敏负责完成发布并跟进验收。"),
