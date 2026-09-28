@@ -1,5 +1,7 @@
 # ZhuaTech AI Cases｜知华科技企业 AI 应用案例中心
 
+[简体中文](README.md) | [English](README.en.md)
+
 > 把抽象的模型能力转化为可体验、可测试、可扩展的企业业务案例。
 
 [知华科技官网](https://www.zhuatech.cn/) · [33 个独立项目矩阵](docs/independent-project-matrix.md) · [架构设计](docs/architecture.md) · [API 摘要](docs/api.md) · [部署说明](deploy/README.md)
